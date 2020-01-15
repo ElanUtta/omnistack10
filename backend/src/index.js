@@ -16,7 +16,8 @@ app.use(routes)
 //conecta com o servidor mongo atlas 
 mongoose.connect(`mongodb+srv://omnistack:${config.senha}@cluster0-huecc.mongodb.net/week10?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 });
 
 
