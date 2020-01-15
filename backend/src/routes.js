@@ -1,6 +1,6 @@
 const { Router } = require('express')
-const axios = require('axios')
-const Dev = require('./models/Dev')
+const DevController = require('./controllers/DevControllers')
+const SearchControllers = require('./controllers/SearchControllers')
 
 const routes = Router()
 
@@ -11,32 +11,10 @@ const routes = Router()
 //Body: request.body (Criar e passar grandes dados)
 
 
-routes.post('/devs', async (request, response) => {
-    const { github_username, techs, latitude, longitude } = request.body
+routes.post('/devs', DevController.store);
+routes.get('/devs', DevController.index);
+routes.post('/devs/update', DevController.update);
 
-    const ApiResponse = await axios.get(`https://api.github.com/users/${github_username}`)
-
-    const { name = login, avatar_url, bio } = ApiResponse.data
-
-    const techArray = techs.split(',').map(tech => tech.trim())
-
-    const location = {
-        type: 'Point',
-        coordinates: [longitude, latitude],
-    }
-
-    const dev = await Dev.create({
-        github_username,
-        name,
-        avatar_url,
-        bio,
-        techs: techArray,
-        location
-    })
-
-
-    return response.json(dev)
-});
-
+routes.get('/search', SearchControllers.index);
 
 module.exports = routes
