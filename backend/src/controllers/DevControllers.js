@@ -58,8 +58,9 @@ module.exports = {
                 techs: techArray,
                 location
             })
+            return response.json(dev)
         }
 
-        return response.json(dev)
+
     }
 }

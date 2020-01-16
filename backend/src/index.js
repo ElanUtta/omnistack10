@@ -2,8 +2,11 @@ const express = require('express'); //Importando o express
 const mongoose = require('mongoose');
 const routes = require('./routes.js')
 const setting = require('../settings.js')
+const cors = require('cors')
 
 const app = express();
+
+app.use(cors())
 
 //Assim o express entende o JSON e isso vale para todas as rotas.
 app.use(express.json())
