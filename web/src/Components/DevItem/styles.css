@@ -17,6 +17,13 @@ li.dev-item header img {
     border-radius: 50%;
 }
 
+li.dev-item header a img{
+    left: 20px;  
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 li.dev-item header .user-info {
     margin-left: 10px;
 }
