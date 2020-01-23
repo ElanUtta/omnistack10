@@ -5,6 +5,21 @@ const parseStringAsArray = require('../utils/parseStringAsArray')
 
 module.exports = {
 
+
+    async delete(request, response) {
+        const { github_username } = request.body
+
+        const dev = await Dev.findOneAndDelete({
+            github_username: github_username
+        })
+
+        return response.json({
+            menssege: "Dev Deletado",
+            Dev: dev
+        })
+    },
+
+
     async update(request, response) {
 
         const { github_username, techs, bio, name, avatar_url } = request.body

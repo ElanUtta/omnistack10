@@ -14,6 +14,7 @@ const routes = Router()
 routes.post('/devs', DevController.store);
 routes.get('/devs', DevController.index);
 routes.post('/devs/update', DevController.update);
+routes.delete('/devs/delete', DevController.delete);
 
 routes.get('/search', SearchControllers.index);
 
