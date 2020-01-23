@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css'
 
-import logo_edite from "./trash.png"
+import logo_del from "../../public/trash.png"
 
 function DevItem({ dev }) {
 
@@ -14,9 +14,10 @@ function DevItem({ dev }) {
                     <span> {dev.techs.join(', ')} </span>
                 </div>
                 <a href="#">
-                    <img src={logo_edite} alt="" />
+                    <img src={logo_del} alt="" />
                 </a>
             </header>
+
             <p>{dev.bio}</p>
             <a href={`https://github.com/${dev.github_username}`}> Acessar Perfil</a>
         </li>

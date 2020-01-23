@@ -18,7 +18,7 @@ li.dev-item header img {
 }
 
 li.dev-item header a img{
-    left: 20px;  
+    left: 150px !important;
     width: 30px;
     height: 30px;
     border-radius: 50%;
